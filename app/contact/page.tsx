@@ -27,7 +27,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-accent">Location</h3>
                 <p className="text-lg leading-relaxed max-w-sm">
-                  Hi-Life Paints<br />
+                  HI LIFE<br />
                   123 Architectural Road<br />
                   Ranchi, Jharkhand 834001<br />
                   India

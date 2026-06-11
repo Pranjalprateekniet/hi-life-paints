@@ -7,7 +7,7 @@ const credentials = [
   {
     num: "02",
     title: "Authorized CERA Dealer",
-    body: "CERA products stocked at Hi-Life Paints are genuine, warranted, and supplied through the official CERA distribution network.",
+    body: "CERA products stocked at HI LIFE are genuine, warranted, and supplied through the official CERA distribution network.",
   },
   {
     num: "03",
@@ -36,7 +36,7 @@ export function WhyHiLifeSection() {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-8 h-[1px] bg-[#2F5D50]" />
               <span className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium">
-                Why Hi-Life
+                Why HI LIFE
               </span>
             </div>
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#111111] leading-[1.05] tracking-tight">

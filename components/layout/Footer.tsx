@@ -18,12 +18,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-16 border-b border-[#D1D5DB]">
           {/* Brand */}
           <div className="md:col-span-1">
-            <p className="font-serif text-2xl text-[#111111] tracking-widest uppercase mb-4">
-              Hi-Life Paints
+            <p className="font-serif text-2xl text-[#111111] tracking-widest uppercase mb-2">
+              HI LIFE
+            </p>
+            <p className="text-[#2F5D50] text-[10px] tracking-[0.25em] uppercase font-medium mb-4">
+              Hi Living – Low Budget
             </p>
             <p className="text-[#6B7280] text-sm leading-relaxed max-w-xs">
-              Authorized Nerolac &amp; CERA dealer. Premium architectural supply
-              for Ranchi and Jharkhand.
+              Ranchi's trusted destination for Nerolac paints, CERA hardware,
+              and premium building materials for residential and commercial spaces.
             </p>
           </div>
 
@@ -78,7 +81,7 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#6B7280]">
-          <p>&copy; {year} Hi-Life Paints. All rights reserved.</p>
+          <p>&copy; {year} HI LIFE. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <span className="w-4 h-[1px] bg-[#2F5D50]" />
             <span className="tracking-widest uppercase">

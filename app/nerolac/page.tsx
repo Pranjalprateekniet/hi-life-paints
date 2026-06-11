@@ -14,7 +14,7 @@ export default function NerolacPage() {
             Kansai Nerolac Paints.
           </h1>
           <p className="text-xl text-muted max-w-2xl leading-relaxed">
-            As Ranchi's trusted authorized dealer, we provide the complete range of Nerolac architectural finishes, combining Japanese technology with Indian resilience.
+            HI LIFE is Ranchi's authorized Nerolac dealer — bringing the complete range of architectural finishes, combining proven technology with the quality and value your project deserves.
           </p>
         </div>
         

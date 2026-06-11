@@ -1,18 +1,18 @@
 const statements = [
   {
     num: "01",
-    heading: "Curated, not collected.",
-    body: "Every product on our shelves has been selected for a reason. We don't stock everything — we stock the right things. Nerolac's proven paint technology. CERA's precision hardware. Nothing more, nothing less.",
+    heading: "Quality that doesn't demand a premium budget.",
+    body: "HI LIFE was built on a single belief: that high-quality living should be accessible. We bring together Nerolac's proven paint technology and CERA's precision hardware so every project — large or small — gets the finish it deserves.",
   },
   {
     num: "02",
-    heading: "For people who care about the details.",
-    body: "Our clients are architects, interior designers, builders, and homeowners who understand that the quality of materials is what separates a good space from a remarkable one. We serve that standard.",
+    heading: "A complete finishing-materials partner.",
+    body: "From the first coat of primer to the final fitting, we supply everything in between. Interior paints, exterior protection, waterproofing, wood finishes, bathroom fittings, sanitaryware, and hardware accessories — all under one roof.",
   },
   {
     num: "03",
-    heading: "Ranchi's specialist, not its generalist.",
-    body: "We are not a paint shop. We are a material resource. When you need expert guidance on a finish, a color match, or the right fitting for a specific application — this is where you come.",
+    heading: "Ranchi's trusted destination for builders and homeowners.",
+    body: "We work with architects, contractors, interior designers, and discerning homeowners. Whether it's a single room renovation or a full commercial build, we bring the same expertise and the same commitment to quality at every budget.",
   },
 ];
 
@@ -30,33 +30,37 @@ export function StudioSection() {
                 The Studio
               </span>
             </div>
-            <h2 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-[1.1] tracking-tight mb-8">
-              We believe the smallest details define the grandest spaces.
+            <h2 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-[1.1] tracking-tight mb-6">
+              Hi Living &ndash; Low Budget.
             </h2>
+            <p className="text-[#4B5563] text-sm leading-relaxed mb-8">
+              Because quality homes should not require excessive budgets.
+            </p>
             <div className="w-12 h-[1px] bg-[#D1D5DB]" />
           </div>
 
           {/* Right: body copy */}
           <div className="lg:col-span-7 lg:col-start-6 space-y-8 text-[#4B5563] text-lg leading-relaxed">
             <p>
-              Hi-Life Paints was founded on a simple conviction: that building
+              HI LIFE was founded on a simple conviction: that building
               materials should never be an afterthought. The colour on your walls,
-              the finish on your doors, the handle your hand reaches for a hundred
+              the finish on your doors, the fitting your hand reaches for a hundred
               times a day — these are not afterthoughts. They are the experience of
-              a space.
+              a space. And no one should have to overpay to get them right.
             </p>
             <p>
               As an authorized dealer for Kansai Nerolac, we bring advanced
               paint technology to every project in Ranchi — engineered to
               withstand India's demanding climate without sacrificing the color
               depth and finish quality that designers specify. As a CERA hardware
-              supplier, we offer precision-crafted fittings and sanitaryware that
-              express intent in every touch.
+              supplier, we offer precision-crafted fittings and sanitaryware for
+              every scale of project.
             </p>
             <p>
-              We work with architects, interior designers, contractors, and
-              discerning homeowners. What they all share is a standard — and we
-              exist to meet it.
+              We serve architects, interior designers, contractors, and homeowners
+              — across residential, renovation, and commercial projects. What they
+              all share is a standard. We exist to meet it, at a price that makes
+              sense.
             </p>
           </div>
         </div>

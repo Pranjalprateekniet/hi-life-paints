@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Hi-Life Paints | Premium Architectural Supplies",
-  description: "Authorized Nerolac paint dealer and premium hardware supplier in Ranchi. Supplying the foundational elements for beautiful spaces.",
+  title: "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
+  description: "HI LIFE is Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials. Hi Living – Low Budget.",
 };
 
 export default function RootLayout({

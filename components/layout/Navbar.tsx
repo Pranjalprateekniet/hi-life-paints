@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
@@ -57,12 +58,15 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-screen-2xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Logo */}
+          {/* Brand mark */}
           <Link
             href="/"
-            className="font-serif text-xl tracking-widest text-[#111111] hover:text-[#2F5D50] transition-colors duration-300 uppercase"
+            className="group flex items-center gap-2.5 transition-colors duration-300"
+            aria-label="HI LIFE – Home"
           >
-            Hi-Life Paints
+            <span className="font-serif text-xl tracking-widest uppercase text-[#111111] group-hover:text-[#2F5D50] transition-colors duration-300">
+              HI LIFE
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -136,7 +140,7 @@ export function Navbar() {
         <div className="absolute bottom-12 left-10 right-10">
           <div className="w-8 h-[1px] bg-[#2F5D50] mb-6" />
           <p className="text-[#4B5563] text-xs tracking-widest uppercase">
-            Hi-Life Paints · Ranchi, Jharkhand
+            HI LIFE · Hi Living – Low Budget
           </p>
         </div>
       </div>

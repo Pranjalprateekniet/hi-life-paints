@@ -34,7 +34,7 @@ function ShowroomPlaceholder() {
       <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center">
         <div className="w-6 h-[1px] bg-[#2F5D50] mb-4" />
         <span className="text-[#FAFAF8]/20 text-[9px] tracking-[0.4em] uppercase font-medium">
-          Hi-Life Paints Showroom
+          HI LIFE Showroom
         </span>
       </div>
     </div>
@@ -50,11 +50,12 @@ export function VisitUsSection() {
         <div className="relative lg:col-span-3 min-h-[420px] lg:min-h-[520px] overflow-hidden bg-[#1C1B18]">
           <Image
             src="/showroomfronthd.png"
-            alt="Hi-Life Paints Showroom"
+            alt="HI LIFE Showroom"
             fill
             priority
             className="object-cover object-center"
           />
+          
         </div>
 
         {/* Content — 2/5 width */}
@@ -138,7 +139,7 @@ export function VisitUsSection() {
       <div className="border-t border-[#D1D5DB] bg-[#111111] px-6 lg:px-16 py-10">
         <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="font-serif text-2xl text-[#FAFAF8]">
-            Our doors are open. Come experience the range.
+            Our doors are open. Come explore the range.
           </p>
           <a
             href="https://wa.me/919334294300"

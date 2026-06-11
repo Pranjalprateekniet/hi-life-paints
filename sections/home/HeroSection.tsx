@@ -13,13 +13,16 @@ export function HeroSection() {
         {/* Headline */}
         <div className="max-w-5xl">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight mb-8 text-[#111111]">
-            Ranchi&apos;s premier destination for{" "}
-            <em className="not-italic text-[#2F5D50]">architectural finishes.</em>
+            Materials for{" "}
+            <em className="not-italic text-[#2F5D50]">better living.</em>
           </h1>
-          <p className="text-lg md:text-xl text-[#4B5563] max-w-2xl leading-relaxed mb-14">
-            Authorized Nerolac paint dealer and CERA hardware supplier. Providing
-            the foundational elements for high-end residential and commercial
-            spaces.
+          <p className="text-lg md:text-xl text-[#4B5563] max-w-2xl leading-relaxed mb-6">
+            Ranchi&apos;s trusted destination for Nerolac paints, CERA hardware,
+            and quality building materials — for residential, renovation, and
+            commercial spaces.
+          </p>
+          <p className="text-sm text-[#2F5D50] tracking-[0.2em] uppercase font-medium mb-10">
+            Hi Living &ndash; Low Budget
           </p>
 
           {/* CTAs */}

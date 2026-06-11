@@ -34,7 +34,7 @@ interface ErrorState {
 
 function buildWhatsAppUrl(form: FormState): string {
   const text = [
-    "Hello Hi-Life Paints,",
+    "Hello HI LIFE,",
     "",
     `Name: ${form.name}`,
     `Phone: ${form.phone}`,
@@ -138,7 +138,7 @@ export function ContactSection() {
                   Location
                 </p>
                 <p className="font-serif text-2xl text-[#111111] mb-2">
-                  Hi-Life Paints
+                  HI LIFE
                 </p>
                 <p className="text-[#4B5563] text-base leading-relaxed">
                   Deendayal Upadhyay Chowk,
@@ -322,7 +322,7 @@ export function ContactSection() {
         href={WHATSAPP_BASE}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Hi-Life Paints on WhatsApp"
+        aria-label="Chat with HI LIFE on WhatsApp"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#111111] text-[#FAFAF8] px-5 py-3 shadow-lg hover:bg-[#2F5D50] transition-colors duration-300 group"
         style={{ borderLeft: "2px solid #2F5D50" }}
       >

@@ -11,7 +11,7 @@ export default function AboutPage() {
             The Studio.
           </h1>
           <p className="text-xl text-muted max-w-2xl leading-relaxed">
-            Hi-Life Paints is more than a hardware supplier. We are a resource for architects, designers, and homeowners seeking uncompromising quality in Ranchi.
+            HI LIFE is more than a hardware supplier. We are a resource for architects, designers, and homeowners seeking uncompromising quality in Ranchi.
           </p>
         </div>
       </section>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             
             <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-sans">
               <p>
-                Founded on the principle that building materials should not be an afterthought, Hi-Life Paints curates products that stand the test of time, both functionally and aesthetically.
+                Founded on the principle that building materials should not be an afterthought, HI LIFE curates products that stand the test of time, both functionally and aesthetically.
               </p>
               <p>
                 As an authorized dealer for Kansai Nerolac, we bring advanced Japanese paint technology to local projects, ensuring durability against the harsh Indian climate without compromising on color vibrancy.
