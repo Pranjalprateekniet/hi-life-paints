@@ -15,8 +15,88 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hi-life.shop"),
+
   title: "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
-  description: "HI LIFE is Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials. Hi Living – Low Budget.",
+
+  description:
+    "HI LIFE is Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials. Hi Living – Low Budget.",
+
+  keywords: [
+    "HI LIFE Ranchi",
+    "Hi Life Ranchi",
+    "Paint Shop Ranchi",
+    "Paint Shops in Ranchi",
+    "Best Paint Shop in Ranchi",
+    "Paint Dealer Ranchi",
+    "Paint Dealers in Ranchi",
+    "Nerolac Paints Ranchi",
+    "Nerolac Paint Dealer Ranchi",
+    "Authorized Nerolac Dealer Ranchi",
+    "Nerolac Paint Shop Ranchi",
+    "CERA Dealer Ranchi",
+    "CERA Hardware Ranchi",
+    "CERA Sanitaryware Ranchi",
+    "Building Materials Ranchi",
+    "Building Material Supplier Ranchi",
+    "Hardware Store Ranchi",
+    "Hardware Shop Ranchi",
+    "Waterproofing Solutions Ranchi",
+    "Waterproofing Products Ranchi",
+    "Wood Finishes Ranchi",
+    "Premium Paints Ranchi",
+    "Home Improvement Store Ranchi",
+    "Construction Materials Ranchi",
+    "Deendayal Upadhyay Chowk Ranchi",
+    "Harmu Road Ranchi",
+    "Hi Living Low Budget",
+  ],
+
+  alternates: {
+    canonical: "https://hi-life.shop",
+  },
+
+  openGraph: {
+    title:
+      "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
+    description:
+      "Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials.",
+    url: "https://hi-life.shop",
+    siteName: "HI LIFE",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/showroomfronthd.png",
+        width: 1200,
+        height: 630,
+        alt: "HI LIFE Showroom Ranchi",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
+    description:
+      "Ranchi's trusted destination for paints, hardware, waterproofing solutions and building materials.",
+    images: ["/showroomfronthd.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  category: "Business",
 };
 
 export default function RootLayout({
