@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { AnimatedSection, AnimatedStagger, StaggerItem } from "@/components/animations";
+import { lineReveal, buttonHover, buttonTap } from "@/lib/animations";
 
 const WHATSAPP_NUMBER = "919334294300";
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -72,7 +75,6 @@ export function ContactSection() {
   ) {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
-    // Clear error on change
     if (errors[name as keyof ErrorState]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -105,9 +107,15 @@ export function ContactSection() {
         {/* Header */}
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-16 pt-24 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-7">
+            <AnimatedSection variant="sectionReveal" className="lg:col-span-7">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-8 h-[1px] bg-[#2F5D50]" />
+                <motion.div
+                  className="w-8 h-[1px] bg-[#2F5D50]"
+                  variants={lineReveal}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-80px" }}
+                />
                 <span className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium">
                   Get in Touch
                 </span>
@@ -116,14 +124,15 @@ export function ContactSection() {
                 Building something{" "}
                 <em className="not-italic text-[#4B5563]">new?</em>
               </h2>
-            </div>
-            <div className="lg:col-span-4 lg:col-start-9">
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15} className="lg:col-span-4 lg:col-start-9">
               <p className="text-[#4B5563] text-base leading-relaxed">
                 Visit our store or speak with our team. We&apos;ll help you find
                 the right finish, the right fitting, and the right approach for
                 your project.
               </p>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
 
@@ -131,9 +140,9 @@ export function ContactSection() {
         <div className="border-t border-[#D1D5DB]">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-16 py-20 grid grid-cols-1 lg:grid-cols-2 gap-20">
             {/* Left: Contact Info */}
-            <div className="space-y-14">
+            <AnimatedStagger className="space-y-14">
               {/* Location */}
-              <div>
+              <StaggerItem>
                 <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-4">
                   Location
                 </p>
@@ -156,12 +165,14 @@ export function ContactSection() {
                   <span>View on Google Maps</span>
                   <span>↗</span>
                 </a>
-              </div>
+              </StaggerItem>
 
-              <div className="w-full h-[1px] bg-[#D1D5DB]" />
+              <StaggerItem>
+                <div className="w-full h-[1px] bg-[#D1D5DB]" />
+              </StaggerItem>
 
               {/* Hours */}
-              <div>
+              <StaggerItem>
                 <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-4">
                   Store Hours
                 </p>
@@ -175,12 +186,14 @@ export function ContactSection() {
                     <span>10:30 AM – 12:30 PM</span>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
 
-              <div className="w-full h-[1px] bg-[#D1D5DB]" />
+              <StaggerItem>
+                <div className="w-full h-[1px] bg-[#D1D5DB]" />
+              </StaggerItem>
 
               {/* Direct Contact */}
-              <div>
+              <StaggerItem>
                 <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-4">
                   Direct Contact
                 </p>
@@ -206,11 +219,11 @@ export function ContactSection() {
                     abhishek.rnc2778@gmail.com
                   </a>
                 </div>
-              </div>
-            </div>
+              </StaggerItem>
+            </AnimatedStagger>
 
             {/* Right: WhatsApp Inquiry Form */}
-            <div>
+            <AnimatedSection delay={0.1}>
               <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-10">
                 Send an Inquiry
               </p>
@@ -300,9 +313,11 @@ export function ContactSection() {
                   />
                 </div>
 
-                <button
+                <motion.button
                   type="submit"
                   className="group flex items-center gap-4 bg-[#111111] text-[#FAFAF8] px-8 py-4 hover:bg-[#2F5D50] transition-all duration-400"
+                  whileHover={buttonHover}
+                  whileTap={buttonTap}
                 >
                   <span className="text-xs font-medium tracking-[0.2em] uppercase">
                     Get a Quote on WhatsApp
@@ -310,23 +325,25 @@ export function ContactSection() {
                   <span className="transform group-hover:translate-x-1 transition-transform text-sm">
                     →
                   </span>
-                </button>
+                </motion.button>
               </form>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* ── Floating WhatsApp Button ───────────────────────────────────── */}
-      <a
+      <motion.a
         href={WHATSAPP_BASE}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with HI LIFE on WhatsApp"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#111111] text-[#FAFAF8] px-5 py-3 shadow-lg hover:bg-[#2F5D50] transition-colors duration-300 group"
         style={{ borderLeft: "2px solid #2F5D50" }}
+        whileHover={buttonHover}
+        whileTap={buttonTap}
       >
-        {/* WhatsApp icon (inline SVG — no extra dependency) */}
+        {/* WhatsApp icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -340,7 +357,7 @@ export function ContactSection() {
         <span className="text-[10px] tracking-[0.2em] uppercase font-medium whitespace-nowrap">
           Need Help? WhatsApp Us
         </span>
-      </a>
+      </motion.a>
     </>
   );
 }

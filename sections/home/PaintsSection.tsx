@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { AnimatedSection, AnimatedImage } from "@/components/animations";
+import { lineReveal } from "@/lib/animations";
 
 const categories = [
   {
@@ -68,9 +73,15 @@ export function PaintsSection() {
       {/* Section Header */}
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-16 pt-24 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          <div>
+          <AnimatedSection variant="sectionReveal">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-8 h-[1px] bg-[#2F5D50]" />
+              <motion.div
+                className="w-8 h-[1px] bg-[#2F5D50]"
+                variants={lineReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+              />
               <span className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium">
                 Authorized Nerolac Dealer
               </span>
@@ -78,11 +89,14 @@ export function PaintsSection() {
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#111111] leading-[1.05] tracking-tight max-w-xl">
               Kansai Nerolac Paints.
             </h2>
-          </div>
-          <p className="text-[#4B5563] text-base leading-relaxed max-w-xs lg:mb-2">
-            Japanese paint technology, supplied locally. A complete range of
-            architectural finishes for every surface and intent.
-          </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <p className="text-[#4B5563] text-base leading-relaxed max-w-xs lg:mb-2">
+              Japanese paint technology, supplied locally. A complete range of
+              architectural finishes for every surface and intent.
+            </p>
+          </AnimatedSection>
         </div>
       </div>
 
@@ -96,7 +110,7 @@ export function PaintsSection() {
               className="grid grid-cols-1 lg:grid-cols-2 border-b border-[#D1D5DB]"
             >
               {/* Image */}
-              <div
+              <AnimatedImage
                 className={`relative overflow-hidden bg-[#111111]/5 ${
                   isReversed ? "lg:order-2" : "lg:order-1"
                 }`}
@@ -113,7 +127,7 @@ export function PaintsSection() {
                 ) : (
                   <EditorialPlaceholder label={cat.title} index={cat.index} />
                 )}
-                {/* Index watermark (only on real images) */}
+                {/* Index watermark */}
                 {cat.imageSrc && (
                   <div className="absolute top-6 left-6 font-serif text-[#FAFAF8]/20 text-7xl leading-none select-none pointer-events-none">
                     {cat.index}
@@ -121,46 +135,55 @@ export function PaintsSection() {
                 )}
                 {/* Subtle top vignette */}
                 <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#111111]/10 to-transparent pointer-events-none" />
-              </div>
+              </AnimatedImage>
 
               {/* Text */}
-              <a
-                href={cat.href}
+              <AnimatedSection
+                as="div"
+                variant="fadeUp"
                 className={`group flex flex-col justify-center px-10 lg:px-20 py-20 bg-white hover:bg-[#FAFAF8] transition-colors duration-500 ${
                   isReversed ? "lg:order-1" : "lg:order-2"
                 }`}
               >
-                <p className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium mb-5">
-                  {cat.subtitle}
-                </p>
-                <div className="w-8 h-[1px] bg-[#D1D5DB] mb-8" />
-                <h3 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-[1.1] mb-7 tracking-tight">
-                  {cat.title}
-                </h3>
-                <p className="text-[#4B5563] text-base leading-relaxed max-w-sm mb-12">
-                  {cat.description}
-                </p>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs tracking-[0.25em] uppercase font-medium text-[#111111] group-hover:text-[#2F5D50] transition-colors duration-300">
-                    Enquire Now
-                  </span>
-                  <svg
-                    width="28"
-                    height="10"
-                    viewBox="0 0 28 10"
-                    fill="none"
-                    className="text-[#111111] group-hover:text-[#2F5D50] group-hover:translate-x-1 transition-all duration-300"
-                  >
-                    <path
-                      d="M1 5h26M22 1l5 4-5 4"
-                      stroke="currentColor"
-                      strokeWidth="0.75"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </a>
+                <a href={cat.href} className="group flex flex-col justify-center">
+                  <p className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium mb-5">
+                    {cat.subtitle}
+                  </p>
+                  <motion.div
+                    className="w-8 h-[1px] bg-[#D1D5DB] mb-8"
+                    variants={lineReveal}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-80px" }}
+                  />
+                  <h3 className="font-serif text-4xl lg:text-5xl text-[#111111] leading-[1.1] mb-7 tracking-tight">
+                    {cat.title}
+                  </h3>
+                  <p className="text-[#4B5563] text-base leading-relaxed max-w-sm mb-12">
+                    {cat.description}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs tracking-[0.25em] uppercase font-medium text-[#111111] group-hover:text-[#2F5D50] transition-colors duration-300">
+                      Enquire Now
+                    </span>
+                    <svg
+                      width="28"
+                      height="10"
+                      viewBox="0 0 28 10"
+                      fill="none"
+                      className="text-[#111111] group-hover:text-[#2F5D50] group-hover:translate-x-1 transition-all duration-300"
+                    >
+                      <path
+                        d="M1 5h26M22 1l5 4-5 4"
+                        stroke="currentColor"
+                        strokeWidth="0.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </AnimatedSection>
             </div>
           );
         })}

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { AnimatedStagger, StaggerItem } from "@/components/animations";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -15,9 +18,9 @@ export function Footer() {
     <footer className="bg-[#FAFAF8] border-t border-[#D1D5DB]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-16 pt-20 pb-10">
         {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-16 border-b border-[#D1D5DB]">
+        <AnimatedStagger className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-16 border-b border-[#D1D5DB]">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <StaggerItem className="md:col-span-1">
             <p className="font-serif text-2xl text-[#111111] tracking-widest uppercase mb-2">
               HI LIFE
             </p>
@@ -28,10 +31,10 @@ export function Footer() {
               Ranchi's trusted destination for Nerolac paints, CERA hardware,
               and premium building materials for residential and commercial spaces.
             </p>
-          </div>
+          </StaggerItem>
 
           {/* Navigation */}
-          <div>
+          <StaggerItem>
             <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-6">
               Explore
             </p>
@@ -47,10 +50,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </StaggerItem>
 
           {/* Contact */}
-          <div>
+          <StaggerItem>
             <p className="text-[#6B7280] text-xs tracking-[0.25em] uppercase font-medium mb-6">
               Reach Us
             </p>
@@ -76,8 +79,8 @@ export function Footer() {
               </li>
               <li>Mon–Sat: 10 AM – 8 PM</li>
             </ul>
-          </div>
-        </div>
+          </StaggerItem>
+        </AnimatedStagger>
 
         {/* Bottom row */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#6B7280]">

@@ -1,9 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import {
+  navbarReveal,
+  mobileMenuOverlay,
+  mobileNavItem,
+  reducedFadeUp,
+  reducedInstant,
+} from "@/lib/animations";
 
 const navItems = [
   { label: "The Studio", href: "/#studio" },
@@ -18,6 +27,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -44,13 +54,25 @@ export function Navbar() {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
-    // If not on homepage, let the href navigate naturally (browser will scroll on load)
     setMenuOpen(false);
   }
 
+  const menuContainerVariant: Variants = shouldReduceMotion
+    ? { hidden: {}, visible: {} }
+    : {
+        hidden: {},
+        visible: {
+          transition: { staggerChildren: 0.06, delayChildren: 0.05 },
+        },
+      };
+
   return (
     <>
-      <header
+      {/* ── Main header bar ─────────────────────────────────────────────── */}
+      <motion.header
+        variants={shouldReduceMotion ? reducedInstant : navbarReveal}
+        initial="hidden"
+        animate="visible"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-[#FAFAF8]/98 shadow-[0_1px_0_0_#D1D5DB]"
@@ -107,43 +129,49 @@ export function Navbar() {
             />
           </button>
         </div>
-      </header>
+      </motion.header>
 
-      {/* Mobile Overlay Menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-[#FAFAF8] flex flex-col justify-center px-10 transition-all duration-500 md:hidden ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col gap-10" aria-label="Mobile primary">
-          {navItems.map((item, i) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className="font-serif text-4xl text-[#111111] hover:text-[#2F5D50] transition-colors duration-300"
-              style={{
-                transitionDelay: menuOpen ? `${i * 60}ms` : "0ms",
-                transform: menuOpen ? "translateX(0)" : "translateX(-20px)",
-                opacity: menuOpen ? 1 : 0,
-                transition: `color 0.3s, transform 0.4s ease ${i * 60}ms, opacity 0.4s ease ${i * 60}ms`,
-              }}
+      {/* ── Mobile Overlay Menu ──────────────────────────────────────────── */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            variants={shouldReduceMotion ? reducedFadeUp : mobileMenuOverlay}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-40 bg-[#FAFAF8] flex flex-col justify-center px-10 md:hidden"
+          >
+            <motion.nav
+              className="flex flex-col gap-10"
+              aria-label="Mobile primary"
+              variants={menuContainerVariant}
+              initial="hidden"
+              animate="visible"
             >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+              {navItems.map((item) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="font-serif text-4xl text-[#111111] hover:text-[#2F5D50] transition-colors duration-300"
+                  variants={shouldReduceMotion ? reducedFadeUp : mobileNavItem}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </motion.nav>
 
-        {/* Mobile footer */}
-        <div className="absolute bottom-12 left-10 right-10">
-          <div className="w-8 h-[1px] bg-[#2F5D50] mb-6" />
-          <p className="text-[#4B5563] text-xs tracking-widest uppercase">
-            HI LIFE · Hi Living – Low Budget
-          </p>
-        </div>
-      </div>
+            {/* Mobile footer */}
+            <div className="absolute bottom-12 left-10 right-10">
+              <div className="w-8 h-[1px] bg-[#2F5D50] mb-6" />
+              <p className="text-[#4B5563] text-xs tracking-widest uppercase">
+                HI LIFE · Hi Living – Low Budget
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -1,3 +1,9 @@
+"use client";
+
+import { AnimatedSection, AnimatedStagger, StaggerItem } from "@/components/animations";
+import { lineReveal } from "@/lib/animations";
+import { motion } from "framer-motion";
+
 const statements = [
   {
     num: "01",
@@ -23,9 +29,18 @@ export function StudioSection() {
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-16 py-28 lg:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           {/* Left: sticky label */}
-          <div className="lg:col-span-4 lg:sticky lg:top-28">
+          <AnimatedSection
+            className="lg:col-span-4 lg:sticky lg:top-28"
+            variant="sectionReveal"
+          >
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-8 h-[1px] bg-[#2F5D50]" />
+              <motion.div
+                className="w-8 h-[1px] bg-[#2F5D50]"
+                variants={lineReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+              />
               <span className="text-[#2F5D50] text-xs tracking-[0.3em] uppercase font-medium">
                 The Studio
               </span>
@@ -37,40 +52,44 @@ export function StudioSection() {
               Because quality homes should not require excessive budgets.
             </p>
             <div className="w-12 h-[1px] bg-[#D1D5DB]" />
-          </div>
+          </AnimatedSection>
 
           {/* Right: body copy */}
-          <div className="lg:col-span-7 lg:col-start-6 space-y-8 text-[#4B5563] text-lg leading-relaxed">
-            <p>
+          <AnimatedStagger
+            className="lg:col-span-7 lg:col-start-6 space-y-8 text-[#4B5563] text-lg leading-relaxed"
+          >
+            <StaggerItem as="p">
               HI LIFE was founded on a simple conviction: that building
               materials should never be an afterthought. The colour on your walls,
               the finish on your doors, the fitting your hand reaches for a hundred
               times a day — these are not afterthoughts. They are the experience of
               a space. And no one should have to overpay to get them right.
-            </p>
-            <p>
+            </StaggerItem>
+            <StaggerItem as="p">
               As an authorized dealer for Kansai Nerolac, we bring advanced
               paint technology to every project in Ranchi — engineered to
               withstand India's demanding climate without sacrificing the color
               depth and finish quality that designers specify. As a CERA hardware
               supplier, we offer precision-crafted fittings and sanitaryware for
               every scale of project.
-            </p>
-            <p>
+            </StaggerItem>
+            <StaggerItem as="p">
               We serve architects, interior designers, contractors, and homeowners
               — across residential, renovation, and commercial projects. What they
               all share is a standard. We exist to meet it, at a price that makes
               sense.
-            </p>
-          </div>
+            </StaggerItem>
+          </AnimatedStagger>
         </div>
       </div>
 
       {/* Three Philosophy Statements */}
       <div className="border-t border-[#D1D5DB]">
         {statements.map((s, i) => (
-          <div
+          <AnimatedSection
             key={s.num}
+            delay={0}
+            variant="fadeUp"
             className={`max-w-screen-2xl mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start ${
               i < statements.length - 1 ? "border-b border-[#D1D5DB]" : ""
             }`}
@@ -89,7 +108,7 @@ export function StudioSection() {
             <div className="lg:col-span-6 lg:col-start-6">
               <p className="text-[#4B5563] text-base leading-relaxed">{s.body}</p>
             </div>
-          </div>
+          </AnimatedSection>
         ))}
       </div>
     </section>
