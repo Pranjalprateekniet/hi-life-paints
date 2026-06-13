@@ -47,15 +47,15 @@ export function VisitUsSection() {
       {/* Asymmetric large layout */}
       <div className="grid grid-cols-1 lg:grid-cols-5">
         {/* Large image — 3/5 width */}
-        <div className="relative lg:col-span-3 min-h-[420px] lg:min-h-[520px] overflow-hidden bg-[#1C1B18]">
+        <div className="relative lg:col-span-3 bg-[#F5F3EE] flex items-center justify-center p-8">
           <Image
             src="/showroomfronthd.png"
-            alt="HI LIFE Showroom"
-            fill
+            alt="Hi-Life Showroom"
+            width={1600}
+            height={900}
             priority
-            className="object-cover object-center"
+            className="w-full h-auto object-contain"
           />
-          
         </div>
 
         {/* Content — 2/5 width */}
