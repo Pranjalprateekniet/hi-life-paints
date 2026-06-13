@@ -58,15 +58,15 @@ export function Footer() {
               <li>Ranchi, Jharkhand</li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919334294300"
                   className="hover:text-[#2F5D50] transition-colors"
                 >
-                  +91 98765 43210
+                  +91 93342 94300
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919334294300"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#2F5D50] transition-colors"

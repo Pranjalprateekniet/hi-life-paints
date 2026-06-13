@@ -18,11 +18,11 @@ export default function ContactPage() {
       {/* Contact Details & Form */}
       <section className="py-32 px-6">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-          
+
           {/* Info Side */}
           <div>
             <h2 className="text-sm font-medium tracking-widest uppercase text-muted mb-12">Studio Details</h2>
-            
+
             <div className="space-y-12">
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-accent">Location</h3>
@@ -51,8 +51,8 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-accent">Direct Contact</h3>
                 <p className="text-lg leading-relaxed">
-                  <a href="mailto:hello@hilifepaints.com" className="block hover:text-accent transition-colors mb-2">hello@hilifepaints.com</a>
-                  <a href="tel:+919876543210" className="block hover:text-accent transition-colors">+91 98765 43210</a>
+                  <a href="mailto: abhishek.rnc2778@gmail.com" className="block hover:text-accent transition-colors mb-2">hello@hilifepaints.com</a>
+                  <a href="tel: +919334294300" className="block hover:text-accent transition-colors">+91 93342 94300</a>
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
           {/* Form Side */}
           <div className="bg-contrast p-10 md:p-16 text-background">
             <h2 className="text-sm font-medium tracking-widest uppercase text-background/50 mb-12">Inquiry Form</h2>
-            
+
             <form className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2">
