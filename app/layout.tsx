@@ -15,12 +15,16 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hi-life.shop"),
+  metadataBase: new URL("https://www.hi-life.shop"),
 
-  title: "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
+  title: "HI LIFE | Paint Shop, Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
 
   description:
     "HI LIFE is Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials. Hi Living – Low Budget.",
+
+  applicationName: "HI LIFE",
+  creator: "HI LIFE",
+  publisher: "HI LIFE",
 
   keywords: [
     "HI LIFE Ranchi",
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://hi-life.shop",
+    canonical: "https://www.hi-life.shop",
   },
 
   openGraph: {
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
       "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
     description:
       "Ranchi's trusted destination for Nerolac paints, CERA hardware, waterproofing solutions, wood finishes, and premium building materials.",
-    url: "https://hi-life.shop",
+    url: "https://www.hi-life.shop",
     siteName: "HI LIFE",
     locale: "en_IN",
     type: "website",
@@ -80,7 +84,7 @@ export const metadata: Metadata = {
     title:
       "HI LIFE | Authorized Nerolac Paints & CERA Hardware Dealer in Ranchi",
     description:
-      "Ranchi's trusted destination for paints, hardware, waterproofing solutions and building materials.",
+      "Ranchi's trusted destination for paints, hardware, waterproofing solutions, and building materials.",
     images: ["/showroomfronthd.png"],
   },
 
